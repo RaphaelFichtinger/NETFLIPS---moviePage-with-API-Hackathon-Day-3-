@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+
+    <p class="main-heading-top">NETFLIPS</p>
+
+    <input id="search-movie-input" type="text">
+    <button id="search-movie-btn" onclick="searchMovieWithName()">search</button>
+
+    <div id="main-container"><p class="search-text-start">Search for a movie to start</p></div>
+    
+    <div id="overlay">
+        <div id="overlay-content"></div>
+        <div id="overlay-close" onclick="closeOverlay()">back</div>
+        <div id="loading-spinner"></div>
+    </div>
+
+
+
+</body>
+</html>

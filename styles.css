@@ -1,0 +1,230 @@
+@font-face {
+    font-family: "PTSansNarrow-Regular";
+    src: url(./assets/fonts/PTSansNarrow-Regular.ttf);
+}
+
+body.overlay-open {
+    overflow: hidden;
+}
+
+.search-text-start{
+    margin-top: 10vh;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "PTSansNarrow-Regular";
+    letter-spacing: 1px;
+
+}
+
+.main-heading-top{
+    font-family: "PTSansNarrow-Regular";
+    letter-spacing: 7px;
+    color: rgb(195, 0, 255);
+    font-size: 52px;
+    padding-left: 15px;
+    
+}
+
+#search-movie-input{
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    padding: 4px 10px;
+
+}
+         
+#search-movie-btn {
+    background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
+    margin-top: 18px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    display: block;
+    border: none;
+    }
+
+#search-movie-btn:hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#main-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 1340px;
+    margin-top: 32px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(15, 15, 15);
+}
+
+#overlay-content {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-family: "PTSansNarrow-Regular";
+    letter-spacing: 1px;
+    font-size: 18px;
+    height: 80%;
+}
+
+#overlay-content img{
+height: 30vh;
+border-radius: 10px;
+}
+
+#overlay-content h1{
+    letter-spacing: 2px;
+}
+
+.movie-plot{
+    width: 50%;
+    font-size: 24px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+
+#overlay img {
+    max-width: 100%;
+}
+
+#overlay-close {
+    background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    display: block;
+    border: none;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+#overlay-close:hover{
+background-position: right center; 
+color: #fff;
+text-decoration: none;
+cursor: pointer;
+}
+
+#loading-spinner {
+    display: none;
+    border: 4px solid transparent;
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 49vw;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.grid-item {
+    padding: 12px;
+    min-height: 300px;
+    height: 10;
+    max-width: 370px;
+    min-width: 80px;
+    margin: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid rgb(45, 45, 45);
+    border-radius: 10px;
+    background-color: rgb(22, 22, 22);
+}
+
+.grid-item:hover{
+    cursor: pointer;
+    background-color: rgb(36, 36, 36);
+    border: 0.5px solid gray;
+}
+
+.grid-item img {
+    height: 70%;
+    width: 100%;
+    max-width: 350px;
+    max-height: 500px;
+}
+
+.grid-item-name{
+    max-width: 330px;
+    display: flex;
+    justify-content: left;
+    border-radius: 0px 0px 10px 10px;
+    color: white;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 500px) {
+    .grid-item{
+        margin: 3px;
+        height: 70%;
+        width: 80px;
+    }
+    .grid-item-name{
+        font-size: 12px;
+    }
+    .grid-item img{
+        height: 40%;
+        width: 100%;
+    }
+    .movie-plot{
+        width: 90%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 840px) {
+    .grid-item-name{
+        font-size: 18px;
+    }
+
+}
